@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\api\DeviceController;
+use \App\Http\Controllers\Api\DevicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,6 @@ use \App\Http\Controllers\api\DeviceController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/devices',[DeviceController::class, 'index']);
+Route::apiResources([
+    'devices' => DevicesController::class
+]);
