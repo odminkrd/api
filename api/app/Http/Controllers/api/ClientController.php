@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\OrderResource;
-use App\Models\Orders;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-
-        return OrderResource::collection(Orders::all());
+        //
     }
 
     /**
@@ -39,7 +36,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        return new  OrderResource(Orders::with('price')->findOrFail($id));
+        //
     }
 
     /**

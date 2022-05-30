@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Api\DevicesController;
-use \App\Http\Controllers\api\ClientsController;
+use \App\Http\Controllers\api\OrderController;
+use \App\Http\Controllers\api\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResources([
-    'devices' => DevicesController::class
-]);
-
-Route::apiResources([
-    'clients' => ClientsController::class
-]);
-Route::apiResources([
-    'orders' => \App\Http\Controllers\api\OrderController::class
+    'clients' => ClientController::class,
+    'orders' => OrderController::class
 ]);
