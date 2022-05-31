@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Clients;
 use App\Models\Orders;
 use Illuminate\Http\Request;
+use App\Http\Resources\ClientResource;
 
 class ClientController extends Controller
 {
@@ -16,7 +17,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return Clients::all();
+        return ClientResource::collection(Clients::all());
     }
 
     /**

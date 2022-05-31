@@ -39,7 +39,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        return new  OrderResource(Orders::with('price')->findOrFail($id));
+        return new  OrderResource(Orders::findOrFail($id));
     }
 
     /**
